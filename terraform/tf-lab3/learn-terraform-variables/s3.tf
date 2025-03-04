@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "remote_state" {
-    bucket = "remote-state-jrs"
+    bucket = "remote-state-jrs-mani"
     force_destroy = true
     acl = "private"
     

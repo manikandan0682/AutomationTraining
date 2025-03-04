@@ -50,3 +50,13 @@ module "ec2_instances" {
   }
 }
 
+module "website_s3_bucket" {
+  source = "./modules/aws-s3-static-website-bucket"
+
+  bucket_name = "remote-state-jrs-mani"
+
+  tags = {
+    Terraform   = "true"
+    Environment = "dev"
+  }
+}

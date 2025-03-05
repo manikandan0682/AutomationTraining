@@ -1,2 +1,3 @@
+[dbsystems]
 db1 ansible_host=52.53.174.241
 db2 ansible_host=13.57.221.182

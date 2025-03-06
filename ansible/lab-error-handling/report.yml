@@ -1,13 +1,13 @@
+---
 - hosts: localhost
-
   tasks:
     - name: "download transaction list"
       block:
         - get_url:
             url: https://bit.ly/3dtJtR7
-            dest: /home/ansible/lab-error-handling/transaction_list
+            dest: /home/AutomationTraining/ansible/lab-error-handling/transaction_list
         - replace:
-            path: /home/ansible/lab-error-handling/transaction_list
+            path: /home/AutomationTraining/ansible/lab-error-handling/transaction_list
             regexp: "#BLANKLINE"
             replace: '\n'
         - debug: msg="File downloaded"

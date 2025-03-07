@@ -5,7 +5,7 @@
     - name: Create a github Repo
       github_repo:
         github_auth_key: "{{github_token}}"
-        username: "msniksndan"
+        username: "manikandan0682"
         name: "Hello-World"
         description: "This is your first repository"
         private: yes

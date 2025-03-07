@@ -3,7 +3,7 @@
     - name: github_username
       prompt: Enter your GitHub Username
   vars_files:
-    - valut.yml
+    - vault.yml
   tasks:
     - name: Create a GitHub Repo
       github_repo:
@@ -19,12 +19,3 @@
       register: result
       tags:
         - create_repo
-
-    - name: Delete GitHub Repo
-      github_repo:
-        github_auth_key:  "{{ github_token }}"
-        username: "{{ github_username }}"
-        name: "Hello-World"
-        state: absent
-      tags:
-        - delete_repo

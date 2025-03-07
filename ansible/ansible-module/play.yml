@@ -1,0 +1,17 @@
+- hosts: localhost
+  vars_files:
+    - vault.yml
+  tasks:
+    - name: Create a github Repo
+      github_repo:
+        github_auth_key: "{{github_token}}"
+        username: "msniksndan"
+        name: "Hello-World"
+        description: "This is your first repository"
+        private: yes
+        has_issues: no
+        has_wiki: no
+        has_downloads: no
+        state: present
+      register: result
+    - debug: var=result

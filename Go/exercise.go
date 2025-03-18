@@ -1,27 +1,16 @@
 package main
 
 import (
-	"fmt",
-	"time",
-	"rand"	
+	"fmt"
+	
 )
 
 func main(){
-	var now time = time.Now()
-
-	
+	display([6]int{1,2,3,4,5})
 }
-func getuserinput() string
-{
-	for {
-		var s string
-		fmt.Println("Enter text: ")
-		fmt.Scanln(&s)
-		fmt.Println(s)
-		if(len(s)==0){
-			fmt.Println("done")
-			break
-		}
-	}
 
+func display(args ...any) {
+	for i,v:=range args{
+		fmt.Println(i,v)
+	}
 }

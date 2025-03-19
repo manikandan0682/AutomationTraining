@@ -9,6 +9,7 @@ data "aws_ami" "amazon_linux" {
 }
 
 resource "aws_instance" "app" {
+
   count = var.instance_count
 
   ami           = data.aws_ami.amazon_linux.id
@@ -27,4 +28,8 @@ resource "aws_instance" "app" {
     EOF
 
   tags = var.tags
-}
+
+  provisioner "local-exec" { command = "echo ${self.private_ip} >> private_ips.txt" }
+  provisioner "local-exec" { command = "echo ${self.public_ip} >> private_ips.txt" }
+ }
+

@@ -1,0 +1,6 @@
+provider_installation {
+  dev_overrides {
+      "hashicorp.com/edu/custom-s3" = "C:/Users/TEKstudent/go/bin"  # Windows path
+  }
+  direct {}
+}

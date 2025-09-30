@@ -1,0 +1,11 @@
+# Policy to demonstrate structure
+// allow = rule { true }
+deny = rule { false }
+maybe = rule { 1 == 2 }
+#main = rule { allow and not deny or maybe }
+
+# allow = rule { ((2 + 2 == 4) and (3 > 1)) or (1 == 0) }
+# main = rule { allow }
+
+allow = rule { (2 + 2 == 5) or (3 > 1 and 1 == 1) }
+main = rule { allow }

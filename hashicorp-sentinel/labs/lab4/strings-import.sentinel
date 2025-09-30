@@ -1,0 +1,5 @@
+import "strings"
+
+#main = rule { strings.has_suffix("sentinel", "nel") }
+
+main = rule { strings.has_prefix("sentinel", "sen") }

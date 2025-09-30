@@ -1,0 +1,2 @@
+get_value = func(x) { return x + 1 }
+main = rule { get_value(5) == 6 }

@@ -1,0 +1,12 @@
+double = func(x) { return x * 2 }
+triple = func(x) { return x * 3 }
+# main = rule { triple(2) == 6 }
+
+add = func(a, b) { return a + b }
+# main = rule { add(2, 3) == 5 }
+
+is_even = func(x) { return x % 2 == 0 }
+# main = rule { is_even(5) }
+
+max = func(a, b) { if a > b { return a } else { return b } }
+main = rule { max(3, 5) == 5 }

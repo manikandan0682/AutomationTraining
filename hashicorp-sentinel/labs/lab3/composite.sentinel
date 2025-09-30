@@ -1,0 +1,23 @@
+is_even = func(x) { return x % 2 == 0 }
+allow = rule { is_even(5) }
+# main = rule { allow }
+
+double = func(x) { return x * 2 }
+triple = func(x) { return x * 3 }
+# main = rule { double(2) == 4 and triple(2) == 6 }
+
+is_even = func(x) { return x % 2 == 0 }
+allow = rule { is_even(2) }
+deny = rule { !is_even(3) }
+# main = rule { allow and deny }
+
+is_even = func(x) { return x % 2 == 0 }
+# main = rule { is_even(2) and is_even(4) }
+
+add = func(a, b) { return a + b }
+is_sum_even = func(a, b) { return add(a, b) % 2 == 0 }
+# main = rule { is_sum_even(2, 4) }
+
+add = func(a, b) { return a + b }
+multiply = func(a, b) { return a * b }
+main = rule { multiply(add(2, 3), 2) == 11 }

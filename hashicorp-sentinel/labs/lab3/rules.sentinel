@@ -1,0 +1,18 @@
+/* is_admin = rule { "admin" in ["admin", "user", "guest"] }
+has_access = rule { is_admin or (5 < 10) }
+main = rule { has_access } */
+
+/* is_admin = rule { "user" in ["admin"] }
+has_access = rule { is_admin or (5 > 10) }
+main = rule { has_access } */
+
+is_admin = rule { "admin" in ["admin", "user", "guest"] }
+has_access = rule { is_admin or (5 < 10) }
+quota_ok = rule { 100 < 200 }
+# main = rule { has_access and quota_ok }
+
+is_weekend = rule { false }
+is_holiday = rule { true }
+maintenance_mode = rule { false }
+can_deploy = rule { !is_weekend and !is_holiday and !maintenance_mode }
+main = rule { can_deploy }

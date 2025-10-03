@@ -1,7 +1,7 @@
 mock "time" {
   data = {
     now = {
-      hour = 9
+      hour = 13
       minute = 0
     }
   }
